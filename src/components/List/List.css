@@ -1,0 +1,38 @@
+.list{
+  width: 25%;
+  border: solid 0.2rem #102C57;
+  margin: 1rem;
+}
+
+.listName{
+  width: 100%;
+  background: #102C57;
+  color: #FEFAF6;
+  border: none;
+  padding: 5px;
+
+  font-family: "Roboto Mono";
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.listName:focus{
+  color: #DAC0A3;
+}
+
+.listItems{
+  display: flex;
+  flex-direction: column;
+}
+
+.listItem{
+  display: flex;
+  align-items: center;
+}
+
+.listItemName{
+  background: none;
+  border: none;
+  font-family: "Roboto Mono";
+  font-weight: 400;
+}

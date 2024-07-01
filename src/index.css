@@ -1,13 +1,38 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+
+/* 
+
+Color palette 
+#FEFAF6
+#EADBC8
+#DAC0A3
+#102C57
+
+https://colorhunt.co/palette/fefaf6eadbc8dac0a3102c57
+
+*/
+
+
+*{
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  padding: 0;
+  box-sizing: border-box;
+  color: #1f1f1f;
+}
+html, body {
+  width: 100%;
+  height: 100%;
+  background-color: #FEFAF6;
+  font-family: "Roboto Mono" ,-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
+  font-weight: 400;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+#root{
+  width: 100%;
+  height: 100%;
 }
