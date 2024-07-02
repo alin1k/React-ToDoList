@@ -4,7 +4,7 @@ import "./List.css"
 
 function List() {
 
-  const [items, setItems] = useState([]);
+  const [items, setItems] = useState(["List item - click to edit"]);
   const [listName, setListName] = useState("List Name - Click to edit");
 
   return (
@@ -18,7 +18,7 @@ function List() {
           )
         }
       </div>
-    
+
       <button onClick={()=>{
         setItems([...items, "Text"]);
       }}> 

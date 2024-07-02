@@ -2,6 +2,7 @@
   width: 25%;
   border: solid 0.2rem #102C57;
   margin: 1rem;
+  background-color: #FEFAF6;
 }
 
 .listName{
@@ -13,11 +14,13 @@
 
   font-family: "Roboto Mono";
   font-weight: 600;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 .listName:focus{
   color: #DAC0A3;
+  border: none;
+  outline: none;
 }
 
 .listItems{
@@ -25,14 +28,36 @@
   flex-direction: column;
 }
 
+.listItems .listItem:nth-child(2n){
+  background-color: #cccfd4ad;
+}
+
 .listItem{
   display: flex;
   align-items: center;
+  padding: 0.25rem;
+
 }
 
 .listItemName{
+  width: 100%;
   background: none;
   border: none;
+  font-family: "Roboto Mono";
+  font-weight: 400;
+}
+
+.listItemName:focus{
+  color: #DAC0A3;
+  border: none;
+  outline: none;
+}
+
+button{
+  background-color: #102C57;
+  border: none;
+  color: #FEFAF6;
+  padding: 0.5rem 0.3rem;
   font-family: "Roboto Mono";
   font-weight: 400;
 }
