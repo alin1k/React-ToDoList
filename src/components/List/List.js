@@ -34,9 +34,12 @@ function List() {
         }
       </div>
 
-      <button onClick={()=>{
-        setItems([...items, "Text"]);
-      }}> 
+      <button 
+        className="addButton"
+        onClick={()=>{
+          setItems([...items, "List item - click to edit"]);
+        }}
+      > 
         Add Item
       </button>
 

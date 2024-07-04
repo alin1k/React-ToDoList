@@ -54,23 +54,25 @@
 }
 
 .deleteButton{
-  fill: #102C57;
+  color: #102C57;
 }
 
 .deleteButton:hover{
   cursor: pointer;
-  fill: #DAC0A3;
+  color: #DAC0A3;
 }
 
-button{
+.addButton{
   background-color: #102C57;
   border: none;
   color: #FEFAF6;
   padding: 0.5rem 0.3rem;
   font-family: "Roboto Mono";
   font-weight: 400;
+  width: 100%;
 }
 
-button:hover{
+.addButton:hover{
   cursor: pointer;
+  background-color: #DAC0A3;
 }

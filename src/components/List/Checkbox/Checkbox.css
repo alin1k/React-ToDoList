@@ -1,8 +1,5 @@
 .customCheckbox{
-  margin-right: 0.5rem;
-}
-
-.checkmark{
-  padding-left: 23px;
-  border: solid 2px #102C57;
+  margin-top: 5px;
+  margin-right: 1rem;
+  color: #102C57;
 }

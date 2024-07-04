@@ -1,4 +1,6 @@
 import "./Checkbox.css"
+import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank';
+import CheckBoxIcon from '@mui/icons-material/CheckBox';
 
 function Checkbox({checked, setChecked}) {
 
@@ -8,8 +10,13 @@ function Checkbox({checked, setChecked}) {
 
   return (
     <div className="customCheckbox">
-      <span className="checkmark" onClick={handleCheck} style={checked? {backgroundColor:"#102C57"} : {background: "transparent"}}></span>
+      {checked ? 
+        <CheckBoxIcon onClick={handleCheck} />
+        :
+        <CheckBoxOutlineBlankIcon onClick={handleCheck} />
+      }
     </div>
+    
   )
 }
 
