@@ -4,16 +4,19 @@ import "./List.css"
 
 function List() {
 
-  const [items, setItems] = useState(["List item - click to edit"]);
+  const [items, setItems] = useState([{text:"List item - click to edit", checked: false}]);
   const [listName, setListName] = useState("List Name - Click to edit");
 
   const deleteItemFromList = (index)=>{
-    console.log(`Deleting item at index: ${index}`);
     setItems((prevItems) => prevItems.filter((val, i) => i !== index));
   }
 
   const updateItemValue = (index, newValue) =>{
-    setItems((prevItems) => prevItems.map( (value, i) => (i === index? newValue : value)))
+    setItems((prevItems) => prevItems.map( (item, i) => (i === index? {...item, text: newValue} : item)))
+  }
+
+  const updateItemCheckedValue = (index, newValue)=>{
+    setItems((prevItems) => prevItems.map( (item, i) => (i === index? {...item, checked: newValue} : item)))
   }
 
   return (
@@ -22,13 +25,14 @@ function List() {
 
       <div className="listItems">
         {
-          items.map((val, index)=>
+          items.map((item, index)=>
             <ListItem 
               key={index} 
               index={index} 
-              value={val} 
+              item={item} 
               deleteItemFromList={deleteItemFromList}
               updateItemValue={updateItemValue}
+              updateItemCheckedValue={updateItemCheckedValue}
             />
           )
         }
@@ -37,7 +41,7 @@ function List() {
       <button 
         className="addButton"
         onClick={()=>{
-          setItems([...items, "List item - click to edit"]);
+          setItems([...items, {text:"List item - click to edit", checked: false}]);
         }}
       > 
         Add Item

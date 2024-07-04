@@ -2,10 +2,12 @@ import "./Checkbox.css"
 import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank';
 import CheckBoxIcon from '@mui/icons-material/CheckBox';
 
-function Checkbox({checked, setChecked}) {
+function Checkbox({checked, setChecked, index, updateItemCheckedValue}) {
 
-  const handleCheck = ()=>{
-    setChecked(!checked);
+  const handleCheck = async ()=>{
+    const newChecked = !checked
+    setChecked(newChecked);
+    updateItemCheckedValue(index, newChecked)
   }
 
   return (

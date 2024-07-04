@@ -1,19 +1,25 @@
 import { useEffect, useState } from "react";
 import Checkbox from "./Checkbox/Checkbox";
 import "./List.css"
-import DeleteIcon from '@mui/icons-material/Delete';
+import HighlightOffIcon from '@mui/icons-material/HighlightOff';
 
-function ListItem({index, value, deleteItemFromList, updateItemValue}) {
-  const [inputValue, setInputValue] = useState(value);
-  const [checked, setChecked] = useState(false);
+function ListItem({index, item, deleteItemFromList, updateItemValue, updateItemCheckedValue}) {
+  const { text , checked:checkedItem } = item;
+
+  const [inputValue, setInputValue] = useState(text);
+  const [checked, setChecked] = useState(checkedItem);
 
   useEffect(()=>{
-    setInputValue(value)
-  }, [value])
+    setInputValue(text);
+  }, [text])
+
+  useEffect(()=>{
+    setChecked(checkedItem);
+  }, [checkedItem])
 
   return (
     <div className="listItem">
-      <Checkbox checked={checked} setChecked={setChecked} />
+      <Checkbox checked={checked} setChecked={setChecked} index={index} updateItemCheckedValue={updateItemCheckedValue} />
       
       <input 
         className="listItemName" 
@@ -25,10 +31,9 @@ function ListItem({index, value, deleteItemFromList, updateItemValue}) {
         style={checked? {textDecoration: "line-through"} : {textDecoration: "none"}}
       />
 
-      <DeleteIcon
+      <HighlightOffIcon
         className="deleteButton"
         onClick={()=>{
-          console.log(`Button clicked for index: ${index}`);
           deleteItemFromList(index)
         }}
       />

@@ -48,7 +48,6 @@
 }
 
 .listItemName:focus{
-  color: #DAC0A3;
   border: none;
   outline: none;
 }
