@@ -10,12 +10,12 @@ export const updateItemCheckedValue = (setItems, index, newValue)=>{
   setItems((prevItems) => prevItems.map( (item, i) => (i === index? {...item, checked: newValue} : item)))
 }
 
-export const moveItemUpInTheList = (setItems, index)=>{
+export const moveItemUpInTheList =(setItems, index)=>{
   if(index > 0){
     setItems((prevItems) =>{ 
       const movingItem = prevItems[index];
-      prevItems.filter((val, i) => i !== index);
-      prevItems.toSpliced(index-1, 0 , movingItem);
+      prevItems = prevItems.filter((val, i) => i !== index);
+      prevItems = prevItems.toSpliced(index-1, 0 , movingItem);
       return prevItems;
     });
   }
@@ -24,8 +24,8 @@ export const moveItemUpInTheList = (setItems, index)=>{
 export const moveItemDownInTheList = (setItems, index)=>{
   setItems((prevItems) =>{ 
     const movingItem = prevItems[index];
-    prevItems.filter((val, i) => i !== index);
-    prevItems.toSpliced(index+1, 0 , movingItem);
+    prevItems = prevItems.filter((val, i) => i !== index);
+    prevItems = prevItems.toSpliced(index+1, 0 , movingItem);
     return prevItems;
   });
 }

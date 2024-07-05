@@ -6,7 +6,7 @@ import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
 function ListItem({index, item, deleteItemFromList, updateItemValue, updateItemCheckedValue, moveItemDownInTheList, moveItemUpInTheList}) {
-  
+
   const { text , checked:checkedItem } = item;
 
   const [inputValue, setInputValue] = useState(text);
@@ -24,7 +24,7 @@ function ListItem({index, item, deleteItemFromList, updateItemValue, updateItemC
     <div className="listItem">
       <Checkbox checked={checked} setChecked={setChecked} index={index} updateItemCheckedValue={updateItemCheckedValue} />
       
-      <input 
+      <input
         className="listItemName" 
         value={inputValue}
         onChange={(e)=> {
@@ -36,13 +36,16 @@ function ListItem({index, item, deleteItemFromList, updateItemValue, updateItemC
 
       <HighlightOffIcon
         className="actionButton"
-        onClick={()=>{
-          deleteItemFromList(index)
-        }}
+        onClick={()=>{deleteItemFromList(index)}}
       />
-
-      <KeyboardArrowUpIcon className="actionButton" onClick={()=>{moveItemUpInTheList(index)}}/>
-      <KeyboardArrowDownIcon className="actionButton" onClick={()=>{moveItemDownInTheList(index)}}/>
+      <KeyboardArrowUpIcon 
+        className="actionButton" 
+        onClick={()=>{moveItemUpInTheList(index)}}
+      />
+      <KeyboardArrowDownIcon 
+        className="actionButton" 
+        onClick={()=>{moveItemDownInTheList(index)}}
+      />
       
 
     </div>

@@ -18,7 +18,6 @@ function Checkbox({checked, setChecked, index, updateItemCheckedValue}) {
         <CheckBoxOutlineBlankIcon onClick={handleCheck} />
       }
     </div>
-    
   )
 }
 
