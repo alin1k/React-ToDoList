@@ -1,6 +1,7 @@
 import { useState } from "react";
 import ListItem from "./ListItem";
 import "./List.css"
+import CloseIcon from '@mui/icons-material/Close';
 
 import{
  deleteItemFromList,
@@ -17,7 +18,10 @@ function List() {
 
   return (
     <div className="list">
-      <input className="listName" value={listName} onChange={e => setListName(e.target.value)}/>
+      <div className="listTop">
+        <input className="listName" value={listName} onChange={e => setListName(e.target.value)}/>
+        <CloseIcon className="closeListButton" />
+      </div>
 
       <div className="listItems">
         {

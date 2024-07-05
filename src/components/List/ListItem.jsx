@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Checkbox from "./Checkbox/Checkbox";
 import "./List.css"
-import HighlightOffIcon from '@mui/icons-material/HighlightOff';
+import RemoveIcon from '@mui/icons-material/Remove';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
@@ -34,10 +34,6 @@ function ListItem({index, item, deleteItemFromList, updateItemValue, updateItemC
         style={checked? {textDecoration: "line-through"} : {textDecoration: "none"}}
       />
 
-      <HighlightOffIcon
-        className="actionButton"
-        onClick={()=>{deleteItemFromList(index)}}
-      />
       <KeyboardArrowUpIcon 
         className="actionButton" 
         onClick={()=>{moveItemUpInTheList(index)}}
@@ -46,8 +42,10 @@ function ListItem({index, item, deleteItemFromList, updateItemValue, updateItemC
         className="actionButton" 
         onClick={()=>{moveItemDownInTheList(index)}}
       />
-      
-
+      <RemoveIcon
+        className="actionButton"
+        onClick={()=>{deleteItemFromList(index)}}
+      />
     </div>
   )
 }

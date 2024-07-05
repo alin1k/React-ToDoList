@@ -1,16 +1,32 @@
 .list{
   width: 25%;
-  border: solid 0.2rem #102C57;
+  border: solid #102C57 0.2rem;
+  border-top: 0;
   margin: 1rem;
   background-color: #FEFAF6;
 }
 
+.listTop{
+  background: #102C57;
+  display: flex;
+  align-items: center;
+  padding: 7px;
+}
+
+.closeListButton{
+  color: #FEFAF6;
+}
+
+.closeListButton:hover{
+  cursor: pointer;
+  color: #DAC0A3;
+}
+
 .listName{
   width: 100%;
-  background: #102C57;
+  background: none;
   color: #FEFAF6;
   border: none;
-  padding: 5px;
 
   font-family: "Roboto Mono";
   font-weight: 600;
