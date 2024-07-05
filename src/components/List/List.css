@@ -52,11 +52,11 @@
   outline: none;
 }
 
-.deleteButton{
+.actionButton{
   color: #102C57;
 }
 
-.deleteButton:hover{
+.actionButton:hover{
   cursor: pointer;
   color: #DAC0A3;
 }

@@ -19,6 +19,22 @@ function List() {
     setItems((prevItems) => prevItems.map( (item, i) => (i === index? {...item, checked: newValue} : item)))
   }
 
+  const moveItemUpInTheList = async (index)=>{
+    if(index > 0){
+      const movingItem = items[index];
+      setItems((prevItems) => prevItems.filter((val, i) => i !== index));
+      setItems((prevItems)=> prevItems.toSpliced(index-1, 0 , movingItem));
+    }
+  }
+
+  const moveItemDownInTheList = (index)=>{
+    if(index < items.length){
+      const movingItem = items[index];
+      setItems((prevItems) => prevItems.filter((val, i) => i !== index));
+      setItems((prevItems)=> prevItems.toSpliced(index+1, 0 , movingItem));
+    }
+  }
+
   return (
     <div className="list">
       <input className="listName" value={listName} onChange={e => setListName(e.target.value)}/>
@@ -33,6 +49,8 @@ function List() {
               deleteItemFromList={deleteItemFromList}
               updateItemValue={updateItemValue}
               updateItemCheckedValue={updateItemCheckedValue}
+              moveItemDownInTheList={moveItemDownInTheList}
+              moveItemUpInTheList={moveItemUpInTheList}
             />
           )
         }

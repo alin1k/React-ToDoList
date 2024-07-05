@@ -2,8 +2,10 @@ import { useEffect, useState } from "react";
 import Checkbox from "./Checkbox/Checkbox";
 import "./List.css"
 import HighlightOffIcon from '@mui/icons-material/HighlightOff';
+import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
-function ListItem({index, item, deleteItemFromList, updateItemValue, updateItemCheckedValue}) {
+function ListItem({index, item, deleteItemFromList, updateItemValue, updateItemCheckedValue, moveItemDownInTheList, moveItemUpInTheList}) {
   const { text , checked:checkedItem } = item;
 
   const [inputValue, setInputValue] = useState(text);
@@ -32,11 +34,15 @@ function ListItem({index, item, deleteItemFromList, updateItemValue, updateItemC
       />
 
       <HighlightOffIcon
-        className="deleteButton"
+        className="actionButton"
         onClick={()=>{
           deleteItemFromList(index)
         }}
       />
+
+      <KeyboardArrowUpIcon className="actionButton" onClick={()=>{moveItemUpInTheList(index)}}/>
+      <KeyboardArrowDownIcon className="actionButton" onClick={()=>{moveItemDownInTheList(index)}}/>
+      
 
     </div>
   )
