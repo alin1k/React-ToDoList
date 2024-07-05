@@ -2,38 +2,18 @@ import { useState } from "react";
 import ListItem from "./ListItem";
 import "./List.css"
 
+import{
+ deleteItemFromList,
+ updateItemValue,
+ updateItemCheckedValue,
+ moveItemUpInTheList,
+ moveItemDownInTheList
+} from "../../utils/listUtils.js";
+
 function List() {
 
   const [items, setItems] = useState([{text:"List item - click to edit", checked: false}]);
   const [listName, setListName] = useState("List Name - Click to edit");
-
-  const deleteItemFromList = (index)=>{
-    setItems((prevItems) => prevItems.filter((val, i) => i !== index));
-  }
-
-  const updateItemValue = (index, newValue) =>{
-    setItems((prevItems) => prevItems.map( (item, i) => (i === index? {...item, text: newValue} : item)))
-  }
-
-  const updateItemCheckedValue = (index, newValue)=>{
-    setItems((prevItems) => prevItems.map( (item, i) => (i === index? {...item, checked: newValue} : item)))
-  }
-
-  const moveItemUpInTheList = async (index)=>{
-    if(index > 0){
-      const movingItem = items[index];
-      setItems((prevItems) => prevItems.filter((val, i) => i !== index));
-      setItems((prevItems)=> prevItems.toSpliced(index-1, 0 , movingItem));
-    }
-  }
-
-  const moveItemDownInTheList = (index)=>{
-    if(index < items.length){
-      const movingItem = items[index];
-      setItems((prevItems) => prevItems.filter((val, i) => i !== index));
-      setItems((prevItems)=> prevItems.toSpliced(index+1, 0 , movingItem));
-    }
-  }
 
   return (
     <div className="list">
@@ -46,11 +26,11 @@ function List() {
               key={index} 
               index={index} 
               item={item} 
-              deleteItemFromList={deleteItemFromList}
-              updateItemValue={updateItemValue}
-              updateItemCheckedValue={updateItemCheckedValue}
-              moveItemDownInTheList={moveItemDownInTheList}
-              moveItemUpInTheList={moveItemUpInTheList}
+              deleteItemFromList={(index) => deleteItemFromList(setItems, index)}
+              updateItemValue={(index, newValue) => updateItemValue(setItems, index , newValue)}
+              updateItemCheckedValue={(index, newValue) => updateItemCheckedValue(setItems, index , newValue)}
+              moveItemDownInTheList={(index) => moveItemDownInTheList(setItems, index)}
+              moveItemUpInTheList={(index) => moveItemUpInTheList(setItems, index)}
             />
           )
         }

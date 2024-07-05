@@ -6,6 +6,7 @@ import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
 function ListItem({index, item, deleteItemFromList, updateItemValue, updateItemCheckedValue, moveItemDownInTheList, moveItemUpInTheList}) {
+  
   const { text , checked:checkedItem } = item;
 
   const [inputValue, setInputValue] = useState(text);
