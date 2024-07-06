@@ -9,7 +9,6 @@ function App() {
   return (
     <div className="App">
       <NavBar setLists={setLists}/> 
-      
       {lists.length > 0?
         <ListGrid lists={lists}/>
         :
