@@ -1,11 +1,11 @@
 import NavBar from "./components/NavBar/NavBar";
-import List from "./components/List/List";
+import ListGrid from "./components/ListGrid/ListGrid";
 
 function App() {
   return (
     <div className="App">
       <NavBar/>
-      <List/>
+      <ListGrid/>
     </div>
   );
 }

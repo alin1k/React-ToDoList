@@ -1,3 +1,9 @@
+// export const sortItems = (items) => {
+//   const uncheckedItems = items.filter(item => !item.checked);
+//   const checkedItems = items.filter(item => item.checked);
+//   return [...uncheckedItems, ...checkedItems];
+// };
+
 export const deleteItemFromList = (setItems, index)=>{
   setItems((prevItems) => prevItems.filter((val, i) => i !== index));
 }

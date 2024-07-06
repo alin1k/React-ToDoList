@@ -1,9 +1,8 @@
 .list{
-  width: 25%;
   border: solid #102C57 0.2rem;
   border-top: 0;
-  margin: 1rem;
   background-color: #FEFAF6;
+  height: fit-content;
 }
 
 .listTop{

@@ -1,9 +1,10 @@
 nav{
-  padding: 2rem 3rem;
+  padding: 1rem 2rem;
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
 
   background-color: #102C57;
 }
@@ -11,14 +12,14 @@ nav{
 ul{
   list-style: none;
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  
+  flex-direction: column;
+  align-items: start;
 }
 
 li{
   padding: 0 1rem;
   color: #FEFAF6;
+  margin-bottom: 15px;
 }
 
 li:hover{
@@ -29,4 +30,19 @@ li:hover{
 h1{
   color: #FEFAF6;
   font-weight: 700;
+}
+
+@media only screen and (min-width: 600px){
+  ul{
+    flex-direction: row;
+    align-items: center;
+  }
+
+  li{
+    margin: 0;
+  }
+
+  nav{
+    padding: 2rem 3rem;
+  }
 }
