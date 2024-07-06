@@ -1,19 +1,11 @@
 import "./ListGrid.css"
-import List from "../List/List";
 
-function ListGrid() {
-
-
+function ListGrid({lists}) {
 
   return(
     <div className="grid">
-      <List />
-      {/* <List />
-      <List />
-      <List />
-      <List /> */}
+      {lists}
     </div>
-    
   )
 }
 
