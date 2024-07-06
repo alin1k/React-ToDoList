@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ListItem from "./ListItem";
 import "./List.css"
 import CloseIcon from '@mui/icons-material/Close';
@@ -15,6 +15,19 @@ function List() {
 
   const [items, setItems] = useState([{text:"List item - click to edit", checked: false}]);
   const [listName, setListName] = useState("List Name - Click to edit");
+
+  useEffect(()=>{ //checked items go to the back of the list, and new items get added before the first checked item
+    setItems((prevItems)=>{
+      const checkedItemsArray = [];
+
+      prevItems = prevItems.filter((item, i)=>{
+        if(item.checked === true){checkedItemsArray.push(item)}
+        return item.checked === false;
+      })
+
+      return [...prevItems, ...checkedItemsArray];
+    })
+  }, [items])
 
   return (
     <div className="list">
