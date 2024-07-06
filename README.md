@@ -1,6 +1,6 @@
 # To Do List in React
 
-This is a simple to-do-list created in React. I made this project to re-learn React.
+This is a simple to-do list created in React. I made this project to re-learn React.
 
 It is a simple CRUD[^1] application that lets you add as many lists as you want. Inside the lists you can add new list items, move them up or down and even remove items from the list.
 
@@ -19,9 +19,9 @@ It is a simple CRUD[^1] application that lets you add as many lists as you want.
 
 ### Custom Checkbox
 
-At first i wanted to use the `<input type='checkbox'>` element but soon i found out that you cannot style it. Therefore, I created a  `<div>` that contained a `<span>` element. That `<span>` element was the checkbox that when clicked changed the background from transparent to blue, and viceversa.
+At first, I wanted to use the `<input type='checkbox'>` element but soon I found out that you cannot style it. Therefore, I created a  `<div>` that contained a `<span>` element. That `<span>` element was the checkbox that when clicked changed the background from transparent to blue, and vice versa.
 
-Soon enough, that design looked out of place so i replaced it with some icons from [Material-UI](https://mui.com/material-ui/material-icons/), that when clicked switched between a checkmark and a empty box.
+Soon enough, that design looked out of place so I replaced it with some icons from [Material-UI](https://mui.com/material-ui/material-icons/), that when clicked switched between a checkmark and an empty box.
 
 ### Deleting one item from the list
 
