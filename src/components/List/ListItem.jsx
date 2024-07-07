@@ -34,14 +34,14 @@ function ListItem({index, item, deleteItemFromList, updateItemValue, updateItemC
         style={checked? {textDecoration: "line-through"} : {textDecoration: "none"}}
       />
 
-      <KeyboardArrowUpIcon 
+      {/* <KeyboardArrowUpIcon 
         className="actionButton" 
         onClick={()=>{moveItemUpInTheList(index)}}
       />
       <KeyboardArrowDownIcon 
         className="actionButton" 
         onClick={()=>{moveItemDownInTheList(index)}}
-      />
+      /> */}
       <RemoveIcon
         className="actionButton"
         onClick={()=>{deleteItemFromList(index)}}

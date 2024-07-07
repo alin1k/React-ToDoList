@@ -1,4 +1,3 @@
-import List from "../List/List";
 import "./NavBar.css"
 
 function NavBar({setLists}) {
@@ -7,7 +6,7 @@ function NavBar({setLists}) {
       <h1>To-Do List</h1>
       <ul>
         <li onClick={()=>{
-          setLists((prevLists)=> [...prevLists, <List/>]) 
+          setLists((prevLists)=> [...prevLists,  {name:"List Name - click to edit", items:[ {text: "List text - click to edit", checked: false} ]} ]) 
         }}>
           New List
         </li>
