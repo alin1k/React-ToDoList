@@ -5,14 +5,11 @@
 // };
 
 export const deleteItemFromList = (setItems, setLists, listIndex, index)=>{
-  let modifiedItems = {};
   setItems((prevItems) => {
     prevItems = prevItems.filter((val, i) => i !== index)
-    modifiedItems = prevItems;
+    updateAllListItems(setLists, listIndex, prevItems);
     return prevItems;
   });
-
-  updateAllListItems(setLists, listIndex, modifiedItems);
 }
 
 export const deleteList = (setLists, index)=>{
@@ -38,28 +35,19 @@ export const updateAllListItems = (setLists, listIndex,newItems)=>{
 }
 
 export const updateItemValue = (setItems, setLists, listIndex, index, newValue) =>{
-  let modifiedItem = {};
   setItems((prevItems) => {
     prevItems = prevItems.map( (item, i) => (i === index? {...item, text: newValue} : item));
-    modifiedItem = prevItems[index];
-
+    updateListItem(setLists, listIndex, index, prevItems[index]);
     return prevItems;
   })
-
-  updateListItem(setLists, listIndex, index, modifiedItem);
-
 }
 
 export const updateItemCheckedValue = (setItems, setLists, listIndex, index, newValue)=>{
-  let modifiedItem = 0;
   setItems((prevItems) => {
     prevItems = prevItems.map( (item, i) => (i === index? {...item, checked: newValue} : item));
-    modifiedItem = prevItems[index];
-
+    updateListItem(setLists, listIndex, index, prevItems[index]);
     return prevItems;
   })
-
-  updateListItem(setLists, listIndex, index, modifiedItem);
 }
 
 export const moveItemUpInTheList =(setItems, setLists, listIndex, index)=>{
@@ -68,6 +56,7 @@ export const moveItemUpInTheList =(setItems, setLists, listIndex, index)=>{
       const movingItem = prevItems[index];
       prevItems = prevItems.filter((val, i) => i !== index);
       prevItems = prevItems.toSpliced(index-1, 0 , movingItem);
+      updateAllListItems(setLists, listIndex, prevItems);
       return prevItems;
     });
   }
@@ -78,6 +67,7 @@ export const moveItemDownInTheList = (setItems, setLists, listIndex, index)=>{
     const movingItem = prevItems[index];
     prevItems = prevItems.filter((val, i) => i !== index);
     prevItems = prevItems.toSpliced(index+1, 0 , movingItem);
+    updateAllListItems(setLists, listIndex, prevItems);
     return prevItems;
   });
 }
