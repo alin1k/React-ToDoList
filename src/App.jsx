@@ -1,6 +1,8 @@
 import NavBar from "./components/NavBar/NavBar";
 import ListGrid from "./components/ListGrid/ListGrid";
 import { useState } from "react";
+import Footer from "./components/Footer/Footer";
+import "./App.css"
 
 function App() {
 
@@ -10,6 +12,7 @@ function App() {
     <div className="App">
       <NavBar setLists={setLists}/> 
       <ListGrid lists={lists} setLists={setLists} />
+      <Footer/>
     </div>
   );
 }

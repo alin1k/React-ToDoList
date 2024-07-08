@@ -4,7 +4,6 @@ This is a simple to-do list created in React. I made this project to re-learn Re
 
 It is a simple CRUD[^1] application that lets you add as many lists as you want. Inside the lists you can add new list items, move them up or down and even remove items from the list.
 
-
 > [!WARNING]
 > The project is still in progress and this is not the end result.
 
