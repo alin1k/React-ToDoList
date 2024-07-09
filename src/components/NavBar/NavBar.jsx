@@ -1,6 +1,6 @@
 import "./NavBar.css"
 
-function NavBar({setLists}) {
+function NavBar({setLists, lists}) {
   return(
     <nav>
       <h1>To-Do List</h1>
@@ -10,7 +10,14 @@ function NavBar({setLists}) {
         }}>
           New List
         </li>
-        <li>Save List</li>
+        <li
+          onClick={()=>{
+            setLists(prevLists => prevLists);
+            localStorage.setItem("lists", JSON.stringify(lists));
+          }}
+        >
+          Save List
+        </li>
         <li>My Lists</li>
       </ul>
     </nav>
