@@ -1,7 +1,8 @@
 .grid{
   width: 100%;
-  flex: 1;
+  flex-grow: 1;
   display: grid;
+  align-items: start;
   grid-template-columns: auto ;
   gap: 3rem 1rem;
   padding: 0.5rem;
