@@ -6,7 +6,7 @@ function NavBar({setLists, lists}) {
       <h1>To-Do List</h1>
       <ul>
         <li onClick={()=>{
-          setLists((prevLists)=> [...prevLists,  {name:"List Name - click to edit", items:[ {text: "List item - click to edit", checked: false} ]} ]) 
+          setLists((prevLists)=> [...prevLists,  {name:"List Name - click to edit", items:[ {text: "", checked: false} ]} ]) 
         }}>
           New List
         </li>

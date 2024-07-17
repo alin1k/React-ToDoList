@@ -1,4 +1,4 @@
-import {useEffect, useState} from "react";
+import {useEffect, useRef, useState} from "react";
 import ListItem from "./ListItem";
 import "./List.css";
 import CloseIcon from '@mui/icons-material/Close';
@@ -15,6 +15,8 @@ function List({index: listIndex, name, listItems, deleteList, updateListName, se
 
   const [items, setItems] = useState(listItems);
   const [listName, setListName] = useState(name);
+
+  const nameInputRef = useRef(null);
 
   useEffect(()=>{
     setListName(name);
@@ -42,7 +44,13 @@ function List({index: listIndex, name, listItems, deleteList, updateListName, se
       <div className="listTop">
         <input 
           className="listName" 
-          value={listName} 
+          value={listName}
+          ref={nameInputRef}
+          onClick={()=>{
+            if(nameInputRef.current){
+              nameInputRef.current.select();
+            }
+          }} 
           onChange={e =>{ 
             setListName(e.target.value)
             updateListName(listIndex, e.target.value)
@@ -74,7 +82,7 @@ function List({index: listIndex, name, listItems, deleteList, updateListName, se
       <button 
         className="addButton"
         onClick={()=>{
-          setItems([...items, {text:"List item - click to edit", checked: false}]);
+          setItems([...items, {text:"", checked: false}]);
         }}
       > 
         Add Item
