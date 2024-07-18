@@ -1,8 +1,10 @@
 import List from "../List/List";
 import "./ListGrid.css"
-import { deleteList, updateListName } from "../../utils/listUtils";
+import { useSelector } from "react-redux";
 
-function ListGrid({lists, setLists}) {
+function ListGrid() {
+
+  const lists = useSelector(state => state.lists)
 
   return(
     <div className="grid">
@@ -10,12 +12,7 @@ function ListGrid({lists, setLists}) {
         lists.map((list , index)=>
           <List 
             key={index} 
-            index={index} 
-            name={list.name}
-            listItems={list.items} 
-            setLists={setLists}
-            deleteList={(indedx) => deleteList(setLists, index)} 
-            updateListName={(index, newValue) => updateListName(setLists, index, newValue)}
+            index={index}
           />
         )
         :

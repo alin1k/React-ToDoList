@@ -1,18 +1,21 @@
 import "./Checkbox.css"
 import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank';
 import CheckBoxIcon from '@mui/icons-material/CheckBox';
+import { useDispatch } from "react-redux";
+import { updateListItemChecked } from "../../../redux/lists/listsSlice";
 
-function Checkbox({checked, setChecked, index, updateItemCheckedValue}) {
+function Checkbox({itemIndex, listIndex, setCheckedValue, checkedValue}) {
 
-  const handleCheck = async ()=>{
-    const newChecked = !checked
-    setChecked(newChecked);
-    updateItemCheckedValue(index, newChecked)
+  const dispatch = useDispatch();
+
+  const handleCheck = ()=>{
+    setCheckedValue(prevVal => !prevVal);
+    dispatch(updateListItemChecked({listIndex: listIndex, itemIndex: itemIndex}))
   }
 
   return (
     <div className="customCheckbox">
-      {checked ? 
+      {checkedValue ? 
         <CheckBoxIcon onClick={handleCheck} />
         :
         <CheckBoxOutlineBlankIcon onClick={handleCheck} />

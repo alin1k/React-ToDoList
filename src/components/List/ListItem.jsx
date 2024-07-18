@@ -4,47 +4,57 @@ import "./List.css"
 import RemoveIcon from '@mui/icons-material/Remove';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import { useDispatch, useSelector } from "react-redux";
+import { deleteListItem, moveListItemDown, moveListItemUp, updateListItemText } from "../../redux/lists/listsSlice";
 
-function ListItem({index, item, deleteItemFromList, updateItemValue, updateItemCheckedValue, moveItemDownInTheList, moveItemUpInTheList}) {
 
-  const { text , checked:checkedItem } = item;
+function ListItem({listIndex, index: itemIndex}) {
+
+  const text = useSelector(state=> state.lists[listIndex].items[itemIndex].text)
+  const checked = useSelector(state=> state.lists[listIndex].items[itemIndex].checked)
+  const dispatch = useDispatch();
 
   const [inputValue, setInputValue] = useState(text);
-  const [checked, setChecked] = useState(checkedItem);
+  const [checkedValue, setCheckedValue] = useState(checked);
 
   useEffect(()=>{
     setInputValue(text);
   }, [text])
 
   useEffect(()=>{
-    setChecked(checkedItem);
-  }, [checkedItem])
+    setCheckedValue(checked);
+  }, [checked])
 
   return (
     <div className="listItem">
-      <Checkbox checked={checked} setChecked={setChecked} index={index} updateItemCheckedValue={updateItemCheckedValue} />
+      <Checkbox 
+        itemIndex={itemIndex} 
+        listIndex={listIndex}
+        setCheckedValue={setCheckedValue}
+        checkedValue={checkedValue} 
+      />
       
       <input
         className="listItemName" 
         value={inputValue}
         onChange={(e)=> {
           setInputValue(e.target.value)
-          updateItemValue(index, e.target.value)
+          dispatch(updateListItemText({listIndex: listIndex, itemIndex: itemIndex, newText: e.target.value}))
         }} 
-        style={checked? {textDecoration: "line-through"} : {textDecoration: "none"}}
+        style={checkedValue ? {textDecoration: "line-through"} : {textDecoration: "none"}}
       />
 
       <KeyboardArrowUpIcon 
         className="actionButton" 
-        onClick={()=>{moveItemUpInTheList(index)}}
+        onClick={()=>{dispatch(moveListItemUp({listIndex: listIndex, itemIndex: itemIndex}))}}
       />
       <KeyboardArrowDownIcon 
         className="actionButton" 
-        onClick={()=>{moveItemDownInTheList(index)}}
+        onClick={()=>{dispatch(moveListItemDown({listIndex: listIndex, itemIndex: itemIndex}))}}
       />
       <RemoveIcon
         className="actionButton"
-        onClick={()=>{deleteItemFromList(index)}}
+        onClick={()=>{dispatch(deleteListItem({listIndex: listIndex, itemIndex: itemIndex}))}}
       />
     </div>
   )

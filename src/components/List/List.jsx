@@ -2,18 +2,15 @@ import {useEffect, useRef, useState} from "react";
 import ListItem from "./ListItem";
 import "./List.css";
 import CloseIcon from '@mui/icons-material/Close';
+import { useDispatch, useSelector } from "react-redux";
+import { addListItem, changeListName, deleteList } from "../../redux/lists/listsSlice.js";
 
-import{
- deleteItemFromList,
- updateItemValue,
- updateItemCheckedValue,
- moveItemUpInTheList,
- moveItemDownInTheList,
-} from "../../utils/listUtils.js";
+function List({index: listIndex}) {
 
-function List({index: listIndex, name, listItems, deleteList, updateListName, setLists}) {
+  const name = useSelector(state => state.lists[listIndex].name)
+  const items = useSelector(state => state.lists[listIndex].items)
+  const dispatch = useDispatch();
 
-  const [items, setItems] = useState(listItems);
   const [listName, setListName] = useState(name);
 
   const nameInputRef = useRef(null);
@@ -22,23 +19,6 @@ function List({index: listIndex, name, listItems, deleteList, updateListName, se
     setListName(name);
   }, [name]);
 
-  useEffect(()=>{
-    setItems(listItems);
-  }, [listItems]);
-
-  // useEffect(()=>{ //checked items go to the back of the list, and new items get added before the first checked item
-  //   setItems((prevItems)=>{
-  //     const checkedItemsArray = [];
-
-  //     prevItems = prevItems.filter((item, i)=>{
-  //       if(item.checked === true){checkedItemsArray.push(item)}
-  //       return item.checked === false;
-  //     })
-
-  //     return [...prevItems, ...checkedItemsArray];
-  //   })
-  // }, [items])
-
   return (
     <div className="list">
       <div className="listTop">
@@ -46,19 +26,19 @@ function List({index: listIndex, name, listItems, deleteList, updateListName, se
           className="listName" 
           value={listName}
           ref={nameInputRef}
-          onClick={()=>{
+          onClick={()=>{ //select all text inside input box
             if(nameInputRef.current){
               nameInputRef.current.select();
             }
-          }} 
+          }}
           onChange={e =>{ 
             setListName(e.target.value)
-            updateListName(listIndex, e.target.value)
+            dispatch(changeListName({index: listIndex, newName: e.target.value}))
           }}
         />
         <CloseIcon 
           className="closeListButton" 
-          onClick={()=>deleteList(listIndex)}
+          onClick={()=>dispatch(deleteList({index: listIndex}))}
         />
       </div>
 
@@ -68,12 +48,7 @@ function List({index: listIndex, name, listItems, deleteList, updateListName, se
             <ListItem 
               key={index} 
               index={index} 
-              item={item} 
-              deleteItemFromList={(index) => deleteItemFromList(setItems, setLists, listIndex, index)}
-              updateItemValue={(index, newValue) => updateItemValue(setItems, setLists, listIndex, index , newValue)}
-              updateItemCheckedValue={(index, newValue) => updateItemCheckedValue(setItems, setLists, listIndex, index , newValue)}
-              moveItemDownInTheList={(index) => moveItemDownInTheList(setItems, setLists, listIndex, index)}
-              moveItemUpInTheList={(index) => moveItemUpInTheList(setItems, setLists, listIndex, index)}
+              listIndex={listIndex}
             />
           )
         }
@@ -82,7 +57,7 @@ function List({index: listIndex, name, listItems, deleteList, updateListName, se
       <button 
         className="addButton"
         onClick={()=>{
-          setItems([...items, {text:"", checked: false}]);
+          dispatch(addListItem({index: listIndex}));
         }}
       > 
         Add Item
