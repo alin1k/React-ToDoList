@@ -1,4 +1,4 @@
-import {useEffect, useRef, useState} from "react";
+import {useEffect, useState} from "react";
 import ListItem from "./ListItem";
 import "./List.css";
 import CloseIcon from '@mui/icons-material/Close';
@@ -13,8 +13,6 @@ function List({index: listIndex}) {
 
   const [listName, setListName] = useState(name);
 
-  const nameInputRef = useRef(null);
-
   useEffect(()=>{
     setListName(name);
   }, [name]);
@@ -25,12 +23,7 @@ function List({index: listIndex}) {
         <input 
           className="listName" 
           value={listName}
-          ref={nameInputRef}
-          onClick={()=>{ //select all text inside input box
-            if(nameInputRef.current){
-              nameInputRef.current.select();
-            }
-          }}
+          placeholder="Type your list name here"
           onChange={e =>{ 
             setListName(e.target.value)
             dispatch(changeListName({index: listIndex, newName: e.target.value}))

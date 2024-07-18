@@ -37,6 +37,7 @@ function ListItem({listIndex, index: itemIndex}) {
       <input
         className="listItemName" 
         value={inputValue}
+        placeholder="Type your ideea here"
         onChange={(e)=> {
           setInputValue(e.target.value)
           dispatch(updateListItemText({listIndex: listIndex, itemIndex: itemIndex, newText: e.target.value}))

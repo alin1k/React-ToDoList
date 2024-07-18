@@ -7,7 +7,7 @@ const listsSlice = createSlice({
   },
   reducers:{
     addList: (state)=>{
-      state.lists.push({name: "List name", items:[{text: '', checked: false}]})
+      state.lists.push({name: "", items:[{text: '', checked: false}]})
     },
     deleteList: (state, action)=>{
       const {index} = action.payload
