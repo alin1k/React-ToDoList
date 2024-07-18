@@ -21,17 +21,25 @@ export const updateListName = (setLists, index, newValue) => {
 }
 
 export const updateListItem = (setLists, listIndex, newItemIndex, newItem) => {
-  setLists((prevLists)=>{
-    prevLists[listIndex].items[newItemIndex] = newItem;
-    return prevLists;
-  })
+  // setLists((prevLists)=>{
+  //   prevLists[listIndex].items[newItemIndex] = newItem;
+  //   return prevLists;
+  // })
+
+  setLists(prevLists => 
+    prevLists.map((list, index) => index === listIndex ? ({...list, items: list.items.map((item, itemIndex) => itemIndex === newItemIndex? newItem : item)}) : list)
+  )
 }
 
-export const updateAllListItems = (setLists, listIndex,newItems)=>{
-  setLists(prevLists=>{
-    prevLists[listIndex].items = newItems;
-    return prevLists;
-  })
+export const updateAllListItems = (setLists, listIndex , newItems)=>{
+  // setLists(prevLists=>{
+  //   prevLists[listIndex].items = newItems;
+  //   return prevLists;
+  // })
+
+  setLists(prevLists=> 
+    prevLists.map((list, index) => index === listIndex ? ({...list, items: newItems}) : list )
+  )
 }
 
 export const updateItemValue = (setItems, setLists, listIndex, index, newValue) =>{
