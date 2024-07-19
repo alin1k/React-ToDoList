@@ -1,4 +1,4 @@
-# To Do List in React
+# To Do List in React [![Netlify Status](https://api.netlify.com/api/v1/badges/2b22e7ed-ac8b-4da4-9eb0-0719e14c0a0d/deploy-status)](https://app.netlify.com/sites/steady-cannoli-533795/deploys)
 
 This is a simple to-do list created in React. I made this project to re-learn React.
 
