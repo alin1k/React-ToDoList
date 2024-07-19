@@ -1,5 +1,19 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+const moveCheckedItemsToBottom = (array)=>{
+  let newArray = [...array];
+  const checkedItems = []
+  newArray = newArray.filter((item)=>{
+    if(!item.checked){
+      return item
+    }else{
+      checkedItems.push(item);
+    }
+  })
+  return [...newArray, ...checkedItems]
+}
+
+
 const listsSlice = createSlice({
   name: 'lists',
   initialState: {
@@ -7,7 +21,7 @@ const listsSlice = createSlice({
   },
   reducers:{
     addList: (state)=>{
-      state.lists.push({name: "", items:[{text: '', checked: false}]})
+      state.lists.push({name: '', items:[{text: '', checked: false}]})
     },
     deleteList: (state, action)=>{
       const {index} = action.payload
@@ -20,6 +34,7 @@ const listsSlice = createSlice({
     addListItem: (state, action)=>{
       const {index} = action.payload;
       state.lists[index].items.push({text: '', checked: false})
+      state.lists[index].items = moveCheckedItemsToBottom(state.lists[index].items);
     },
     deleteListItem: (state, action)=>{
       const {listIndex, itemIndex} = action.payload;
@@ -27,16 +42,16 @@ const listsSlice = createSlice({
     },
     moveListItemUp: (state, action)=>{
       const {listIndex, itemIndex} = action.payload;
-      if(itemIndex>0){
-        let aux = state.lists[listIndex].items[itemIndex];
+      if(itemIndex>0  && !state.lists[listIndex].items[itemIndex].checked){
+        const aux = state.lists[listIndex].items[itemIndex];
         state.lists[listIndex].items.splice(itemIndex, 1);
         state.lists[listIndex].items.splice(itemIndex-1, 0, aux);
       }
     },
     moveListItemDown: (state, action)=>{
       const {listIndex, itemIndex} = action.payload;
-      if(itemIndex < state.lists[listIndex].items.length - 1){
-        let aux = state.lists[listIndex].items[itemIndex];
+      if(itemIndex < state.lists[listIndex].items.length - 1 && !state.lists[listIndex].items[itemIndex+1].checked){
+        const aux = state.lists[listIndex].items[itemIndex];
         state.lists[listIndex].items.splice(itemIndex, 1);
         state.lists[listIndex].items.splice(itemIndex+1, 0, aux);
       }
@@ -48,6 +63,7 @@ const listsSlice = createSlice({
     updateListItemChecked: (state, action)=>{
       const {listIndex, itemIndex} = action.payload;
       state.lists[listIndex].items[itemIndex].checked = !state.lists[listIndex].items[itemIndex].checked;
+      state.lists[listIndex].items = moveCheckedItemsToBottom(state.lists[listIndex].items);
     }
   }
 })

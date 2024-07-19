@@ -15,23 +15,16 @@ function ListItem({listIndex, index: itemIndex}) {
   const dispatch = useDispatch();
 
   const [inputValue, setInputValue] = useState(text);
-  const [checkedValue, setCheckedValue] = useState(checked);
 
   useEffect(()=>{
     setInputValue(text);
   }, [text])
-
-  useEffect(()=>{
-    setCheckedValue(checked);
-  }, [checked])
 
   return (
     <div className="listItem">
       <Checkbox 
         itemIndex={itemIndex} 
         listIndex={listIndex}
-        setCheckedValue={setCheckedValue}
-        checkedValue={checkedValue} 
       />
       
       <input
@@ -42,7 +35,7 @@ function ListItem({listIndex, index: itemIndex}) {
           setInputValue(e.target.value)
           dispatch(updateListItemText({listIndex: listIndex, itemIndex: itemIndex, newText: e.target.value}))
         }} 
-        style={checkedValue ? {textDecoration: "line-through"} : {textDecoration: "none"}}
+        style={checked ? {textDecoration: "line-through"} : {textDecoration: "none"}}
       />
 
       <KeyboardArrowUpIcon 
