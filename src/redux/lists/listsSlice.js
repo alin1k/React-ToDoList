@@ -6,9 +6,10 @@ const moveCheckedItemsToBottom = (array)=>{
   const checkedItems = []
   newArray = newArray.filter((item)=>{
     if(!item.checked){
-      return item
+      return true
     }else{
       checkedItems.push(item);
+      return false
     }
   })
   return [...newArray, ...checkedItems]
