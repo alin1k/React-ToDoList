@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { loadState, saveState } from "../../utils/localStorage";
 
 const moveCheckedItemsToBottom = (array)=>{
   let newArray = [...array];
@@ -13,32 +14,38 @@ const moveCheckedItemsToBottom = (array)=>{
   return [...newArray, ...checkedItems]
 }
 
+const initialState ={
+  lists: loadState() || []
+}
 
 const listsSlice = createSlice({
   name: 'lists',
-  initialState: {
-    lists: []
-  },
+  initialState,
   reducers:{
     addList: (state)=>{
       state.lists.push({name: '', items:[{text: '', checked: false}]})
+      saveState(state.lists);
     },
     deleteList: (state, action)=>{
       const {index} = action.payload
       state.lists.splice(index, 1);
+      saveState(state.lists);
     },
     changeListName: (state, action)=>{
       const {index, newName} = action.payload
       state.lists[index].name = newName
+      saveState(state.lists);
     },
     addListItem: (state, action)=>{
       const {index} = action.payload;
       state.lists[index].items.push({text: '', checked: false})
       state.lists[index].items = moveCheckedItemsToBottom(state.lists[index].items);
+      saveState(state.lists);
     },
     deleteListItem: (state, action)=>{
       const {listIndex, itemIndex} = action.payload;
       state.lists[listIndex].items.splice(itemIndex, 1);
+      saveState(state.lists);
     },
     moveListItemUp: (state, action)=>{
       const {listIndex, itemIndex} = action.payload;
@@ -46,6 +53,7 @@ const listsSlice = createSlice({
         const aux = state.lists[listIndex].items[itemIndex];
         state.lists[listIndex].items.splice(itemIndex, 1);
         state.lists[listIndex].items.splice(itemIndex-1, 0, aux);
+        saveState(state.lists);
       }
     },
     moveListItemDown: (state, action)=>{
@@ -54,16 +62,19 @@ const listsSlice = createSlice({
         const aux = state.lists[listIndex].items[itemIndex];
         state.lists[listIndex].items.splice(itemIndex, 1);
         state.lists[listIndex].items.splice(itemIndex+1, 0, aux);
+        saveState(state.lists);
       }
     },
     updateListItemText: (state, action)=>{
       const {listIndex, itemIndex, newText} = action.payload;
       state.lists[listIndex].items[itemIndex].text = newText;
+      saveState(state.lists);
     },
     updateListItemChecked: (state, action)=>{
       const {listIndex, itemIndex} = action.payload;
       state.lists[listIndex].items[itemIndex].checked = !state.lists[listIndex].items[itemIndex].checked;
       state.lists[listIndex].items = moveCheckedItemsToBottom(state.lists[listIndex].items);
+      saveState(state.lists);
     }
   }
 })
