@@ -4,6 +4,7 @@ import "./List.css";
 import CloseIcon from '@mui/icons-material/Close';
 import { useDispatch, useSelector } from "react-redux";
 import { addListItem, changeListName, deleteList } from "../../redux/lists/listsSlice.js";
+import Swal from "sweetalert2";
 
 function List({index: listIndex}) {
 
@@ -31,7 +32,27 @@ function List({index: listIndex}) {
         />
         <CloseIcon 
           className="closeListButton" 
-          onClick={()=>dispatch(deleteList({index: listIndex}))}
+          onClick={()=>{
+            Swal.fire({
+              title: "Are you sure?",
+              text: "Your list will be deleted. You won't be able to revert this!",
+              icon: "warning",
+              showCancelButton: true,
+              confirmButtonColor: "#d33",
+              cancelButtonColor: "#102C57",
+              confirmButtonText: "Yes, delete it!"
+            }).then((result) => {
+              if (result.isConfirmed) {
+                dispatch(deleteList({index: listIndex}))
+                Swal.fire({
+                  title: "Deleted!",
+                  text: "Your file has been deleted.",
+                  icon: "success",
+                  confirmButtonColor: "#102C57",
+                });
+              }
+            });
+          }}
         />
       </div>
 

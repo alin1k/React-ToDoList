@@ -7,9 +7,6 @@ It is a simple CRUD[^1] application that lets you add as many lists as you want.
 > [!WARNING]
 > The project is still in progress and this is not the end result.
 
-> [!NOTE]
-> Lists are saved to local storage by clicking on "Save List" button on the navbar. However this is not the final result. Changes will be made on how lists are saved to local storage.
-
 ## Challenges I've encountered
 
 1. Creating a custom checkbox
@@ -29,8 +26,6 @@ Soon enough, that design looked out of place so I replaced it with some icons fr
 ### Deleting one item from the list
 
 This was the first big issue of the project. For the full details and solution check out the [Issue](https://github.com/alin1k/React-ToDoList/issues/1)
-
-
 
 
 [^1]: Create, Read, Update, and Delete
