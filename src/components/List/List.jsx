@@ -46,7 +46,7 @@ function List({index: listIndex}) {
                 dispatch(deleteList({index: listIndex}))
                 Swal.fire({
                   title: "Deleted!",
-                  text: "Your file has been deleted.",
+                  text: "Your list has been deleted.",
                   icon: "success",
                   confirmButtonColor: "#102C57",
                 });
