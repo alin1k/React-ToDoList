@@ -10,6 +10,15 @@ function ListGrid() {
 
   return(
     <div className="listGridContainer">
+      <div className="listNamesContainer">
+        <h2>Your Lists</h2>
+        <div className="listNames">
+          {lists.map((list, index)=>
+            <p>{list.name}</p>
+          )}
+        </div>
+      </div>
+
       {lists.length > 0?
         <div className="grid">
           {lists.map((list , index)=>

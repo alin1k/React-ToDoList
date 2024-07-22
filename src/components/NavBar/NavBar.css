@@ -9,36 +9,36 @@ nav{
   background-color: #102C57;
 }
 
-ul{
+nav ul{
   list-style: none;
   display: flex;
   flex-direction: column;
   align-items: start;
 }
 
-li{
+nav li{
   padding: 0 1rem;
   color: #FEFAF6;
   margin-bottom: 15px;
 }
 
-li:hover{
+nav li:hover{
   color: #DAC0A3;
   cursor: pointer;
 }
 
-h1{
+nav h1{
   color: #FEFAF6;
   font-weight: 700;
 }
 
 @media only screen and (min-width: 600px){
-  ul{
+  nav ul{
     flex-direction: row;
     align-items: center;
   }
 
-  li{
+  nav li{
     margin: 0;
   }
 
