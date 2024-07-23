@@ -16,12 +16,16 @@
 
 .listNamesContainer h2{
   text-align: center;
+  background-color: #102C57;
+  color: #FEFAF6;
   border-bottom: solid #102C57 0.2rem;
 }
 
 .headerContainer{
   padding: 1rem;
+  width: 100%;
   text-align: center;
+  align-content: center;
 }
 
 .addListLink{
@@ -30,10 +34,6 @@
 }
 
 .grid{
-  /* display: grid;
-  align-items: start;
-  grid-template-columns: auto ;
-  gap: 3rem 1rem; */
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -43,10 +43,10 @@
 .listNamesContainer{
   display: none;
   width: 25%;
-  height: 100%;
   overflow-x: auto;
   border: solid #102C57 0.2rem;
   margin-right: 0.5rem;
+  background-color: #FEFAF6;
 }
 
 .listNames{
@@ -55,33 +55,38 @@
   flex-direction: column;
 }
 
+.listNameArrow{
+  color: #102C57;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.listContent{
+  margin-left: 2rem;
+}
+
+.listContent p::before{
+  content: "- ";
+  display: inline;
+}
+
+.listNameArrow:hover{
+  cursor: pointer;
+  color: #245eb4;
+}
+
 .listNames p{
   overflow-x: hidden;
 }
 
-@media only screen and (min-width: 425px){
-  /* .grid{
-    gap: 2rem 1rem;
-    padding: 1rem;
-  } */
-}
-
 @media only screen and (min-width: 750px){
-  /* .grid{
-    grid-template-columns: auto auto;
-  } */
   .listNamesContainer{
     display: block;
   }
   .grid{
     width: 75%;
-    max-height: 74vh;
     overflow-y: auto;
   }
-}
-
-@media only screen and (min-width: 1200px){
-  /* .grid{
-    grid-template-columns: auto auto auto;
-  } */
 }

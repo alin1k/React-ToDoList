@@ -2,6 +2,7 @@ import { addList } from "../../redux/lists/listsSlice";
 import List from "../List/List";
 import "./ListGrid.css"
 import { useDispatch, useSelector } from "react-redux";
+import ListContent from "./ListContent";
 
 function ListGrid() {
 
@@ -13,8 +14,8 @@ function ListGrid() {
       <div className="listNamesContainer">
         <h2>Your Lists</h2>
         <div className="listNames">
-          {lists.map((list, index)=>
-            <p>{list.name}</p>
+          {lists.map((list, listIndex)=>
+            <ListContent key={"list"+listIndex} list={list} listIndex={listIndex}/>
           )}
         </div>
       </div>
