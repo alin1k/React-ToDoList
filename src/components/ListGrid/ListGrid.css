@@ -43,7 +43,7 @@
 .listNamesContainer{
   display: none;
   width: 25%;
-  max-height: 74vh;
+  height: 100%;
   overflow-x: auto;
   border: solid #102C57 0.2rem;
   margin-right: 0.5rem;
