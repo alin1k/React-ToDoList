@@ -1,18 +1,23 @@
 # To Do List in React [![Netlify Status](https://api.netlify.com/api/v1/badges/2b22e7ed-ac8b-4da4-9eb0-0719e14c0a0d/deploy-status)](https://app.netlify.com/sites/todolist1518/deploys)
 
-This is a simple to-do list created in React. I made this project to re-learn React.
+### This is a simple To-Do List created in React. I made this project to re-learn React and learn about Redux. See project [here](https://todolist1518.netlify.app/)
 
-It is a simple CRUD[^1] application that lets you add as many lists as you want. Inside the lists you can add new list items, move them up or down and even remove items from the list.
+It is a simple CRUD[^1] application that lets you add as many lists as you want. Inside the lists you can add new list items, edit them as you want, move them up or down and even remove items from the list.
 
-> [!WARNING]
-> The project is still in progress and this is not the end result.
+> [!INFO]
+> The code needs refactoring
+
+## What I would like to add to this project
+
+1. TypeScript
+2. Testing
+3. Firebase for Auth and for storing to-do lists for each user.
 
 ## Challenges I've encountered
 
 1. Creating a custom checkbox
 2. Deleting one item from the list
 3. Moving a checked item to the end of the list
-
 
 
 ## How I overcame these challenges
@@ -25,7 +30,15 @@ Soon enough, that design looked out of place so I replaced it with some icons fr
 
 ### Deleting one item from the list
 
-This was the first big issue of the project. For the full details and solution check out the [Issue](https://github.com/alin1k/React-ToDoList/issues/1)
+This was the first big issue of the project. For the full details and solution check out the issue here: [Issue](https://github.com/alin1k/React-ToDoList/issues/1)
+
+Deleting items from the list was causing problems with checked items because checkboxes were separated from these items. So, to solve this problem, I have updated the state to save items as objects containing a text field and a checked value (true/false). Now whenever a change is made to the item's text or the item's checked value, the state gets updated correctly.
+
+By adding Redux, things got a lot more easier and I got rid of the listUtils.js file that containted some functions that heleped update the state of the app.
+
+### Moving a checked item to the end of the list
+
+This is a feature I wanted to have in my project but I couldn't make it work at first. I tried something but it only created an infite loop and slowed down my application. See issue and solution here : [Issue link](https://github.com/alin1k/React-ToDoList/issues/2)
 
 
 [^1]: Create, Read, Update, and Delete
