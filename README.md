@@ -4,7 +4,7 @@
 
 It is a simple CRUD[^1] application that lets you add as many lists as you want. Inside the lists you can add new list items, edit them as you want, move them up or down and even remove items from the list.
 
-> [!INFO]
+> [!NOTE]
 > The code needs refactoring
 
 ## What I would like to add to this project
