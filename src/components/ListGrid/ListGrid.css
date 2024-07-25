@@ -81,6 +81,29 @@
   overflow-x: hidden;
 }
 
+.addListButton{
+  border: 0;
+  background-color: transparent;
+  color: #102C57;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 1rem 0 2rem;
+}
+
+.addIcon{
+  width: 2rem !important;
+  height: 2rem !important;
+}
+
+.addListButton:hover{
+  color: #245eb4;
+  cursor: pointer;
+}
+
 @media only screen and (min-width: 750px){
   .listNamesContainer{
     display: block;

@@ -6,8 +6,6 @@ It is a simple CRUD[^1] application that lets you add as many lists as you want.
 
 > [!NOTE]
 > The code needs refactoring
->
-> Navbar buttons don't do anything yet
 
 ## What I would like to add to this project
 

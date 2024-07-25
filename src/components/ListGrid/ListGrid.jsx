@@ -3,6 +3,7 @@ import List from "../List/List";
 import "./ListGrid.css"
 import { useDispatch, useSelector } from "react-redux";
 import ListContent from "./ListContent";
+import AddCircleIcon from '@mui/icons-material/AddCircle';
 
 function ListGrid() {
 
@@ -28,6 +29,13 @@ function ListGrid() {
               index={index}
             />
           )}
+
+          <button className="addListButton" onClick={()=>{
+            dispatch(addList())
+          }}>
+            <AddCircleIcon className="addIcon"/>
+            Add New List
+          </button>
         </div>
         :
         <div className="headerContainer">

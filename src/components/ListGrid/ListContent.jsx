@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
+
 
 function ListContent({list, listIndex}) {
 
@@ -8,7 +10,7 @@ function ListContent({list, listIndex}) {
   return (
     <>
       <div className="listNameArrow" onClick={()=>{setDropDown(prev => !prev)}}>
-        <ArrowDropDownIcon/>
+        {dropDown? <ArrowDropUpIcon/> : <ArrowDropDownIcon/>}
         <h3>{list.name}</h3>
       </div>
       <div className="listContent" style={dropDown? {display: "inline-block"} : {display: "none"}}>

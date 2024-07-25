@@ -15,10 +15,6 @@ function NavBar() {
         }}>
           New List
         </li>
-        <li>
-          Save List
-        </li>
-        <li>My Lists</li>
       </ul>
     </nav>
   )
