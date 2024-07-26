@@ -2,16 +2,17 @@
 
 ### This is a simple To-Do List created in React. I made this project to re-learn React and learn about Redux. See project [here](https://todolist1518.netlify.app/)
 
-It is a simple CRUD[^1] application that lets you add as many lists as you want. Inside the lists, you can add new list items, edit them as you want, move them up or down, and even remove items from the list.
+It is a simple CRUD[^1] application that lets you add as many lists as you want. Inside the lists, you can add new list items, edit them as you wish, move them up or down, and even remove items from the list.
 
 > [!NOTE]
-> The code needs refactoring
+> The code needs refactoring 
 
 ## What I would like to add to this project
 
-1. TypeScript
-2. Testing
-3. Firebase for Auth and for storing to-do lists for each user.
+1. Drag and Drop for moving list items
+2. TypeScript
+3. Testing
+4. Firebase for Auth and for storing to-do lists for each user.
 
 ## Challenges I've encountered
 
@@ -33,7 +34,7 @@ This was the first big issue of the project. For the full details and solution c
 
 Deleting items from the list was causing problems with checked items because checkboxes were separated from these items. So, to solve this problem, I have updated the state to save items as objects containing a text field and a checked value (true/false). Now whenever a change is made to the item's text or the item's checked value, the state gets updated correctly.
 
-By adding Redux, things got a lot more easier and I got rid of the listUtils.js file that contained some functions that helped update the state of the app.
+By adding Redux, things got a lot easier and I got rid of the listUtils.js file that contained some functions that helped update the state of the app.
 
 ### Moving a checked item to the end of the list
 
