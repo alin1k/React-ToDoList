@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+.home{
+  flex: 1;
+  padding: 5rem 13rem;
+}
+
+.home-header{
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 600;
+  font-size: 5rem;
+  color: #102C57;
+}
+
+.home-subheader{
+  font-weight: 400;
+  margin-top: -1rem;
+}

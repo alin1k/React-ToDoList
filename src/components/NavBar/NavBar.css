@@ -16,13 +16,13 @@ nav ul{
   align-items: center;
 }
 
-nav li{
+nav li a{
   padding: 0 1rem;
-  color: #FEFAF6;
+  color: #FEFAF6 !important; 
 }
 
-nav li:hover{
-  color: #DAC0A3;
+nav li a:hover{
+  color: #DAC0A3 !important;
   cursor: pointer;
 }
 

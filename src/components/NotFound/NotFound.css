@@ -1,0 +1,16 @@
+.not-found-container{
+  flex: 1;
+  width: 100%;
+  align-content: center;
+  text-align: center;
+  color: #102C57;
+}
+
+.not-found-container>*{
+  display: block;
+}
+
+.not-found-icon{
+  width: 5rem !important;
+  height: 5rem !important;
+}

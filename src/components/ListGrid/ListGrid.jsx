@@ -39,7 +39,7 @@ function ListGrid() {
         </div>
         :
         <div className="headerContainer">
-          <h1 className="header">TO-DO LIST</h1>
+          <h1 className="header">MY TO-DO LISTS</h1>
           <p>
             <span className="addListLink" onClick={()=>{dispatch(addList())}}>Add a List </span>
             Now and Take Control of Your Tasks
