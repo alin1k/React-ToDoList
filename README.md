@@ -7,7 +7,7 @@ It is a simple CRUD[^1] application that lets you add as many lists as you want.
 > [!NOTE]
 > The code needs refactoring 
 >
-> Home page is under construction 🏗
+> Home page is under construction 🏗. It's not yet responsive
 
 ## What I would like to add to this project
 
