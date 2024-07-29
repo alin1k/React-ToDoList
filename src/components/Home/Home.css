@@ -10,22 +10,22 @@
   font-family: "Bebas Neue", sans-serif;
 }
 
-
 .home{
   flex: 1;
-  padding: 5rem 13rem;
+  padding: 2rem 2rem;
+  width: 100%;
 }
 
 .home-header{
   font-family: "Bebas Neue", sans-serif;
   font-weight: 600;
-  font-size: 5rem;
+  font-size: 4rem;
   color: #102C57;
 }
 
 .home-subheader{
   margin-top: -1rem;
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 600;
   color: #889fc0;
 }
@@ -34,6 +34,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  text-align: center;
 }
 
 .color-primary{
@@ -49,8 +50,9 @@
 }
 
 .home-text{
-  font-weight: 300;
+  font-weight: 400;
   margin-bottom: -0.5rem;
+  font-size: 1rem;
 }
 
 button:hover{
@@ -123,20 +125,24 @@ button a{
 
 .card-header{
   margin-top: -0.5rem;
+  font-size: 1.5rem;
+}
+
+.text{
+  font-size: 1rem;
 }
 
 .grid-3{
   display: grid;
-  grid-template-columns: 33% 33% 33%;
+  grid-template-columns: 1fr;
 }
 
-.grid-2{
+.header-grid{
   display: grid;
-  grid-template-columns: 60% 40%;
+  grid-template-columns: 1fr;
 }
 
 .card{
-  
   text-align: center;
   border: #102C57 solid;
   border-top: 1rem solid #102C57;
@@ -145,4 +151,59 @@ button a{
 .ilustration{
   width: 100%;
   height: 100%;
+  display: none;
+}
+
+.container{
+  width: 100%;
+}
+
+@media only screen and (min-width: 535px){
+  .header-content{
+    text-align: start;
+  }
+}
+
+@media only screen and (min-width: 768px){
+  .grid-3{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .home{
+    padding: 3rem 3rem;
+  }
+  .header-grid{
+    display: grid;
+    grid-template-columns: 60% 40%;
+  }
+
+  .ilustration{
+    display: block;
+  }
+
+  .home-header{
+    font-size: 5rem;
+  }
+
+  .home-text{
+    font-weight: 300;
+    margin-bottom: -0.5rem;
+    font-size: 1.5rem;
+  }
+
+  .home-subheader{
+    font-size: 2rem;
+  }
+}
+
+@media only screen and (min-width: 1024px){
+  .home{
+    padding: 5rem 7rem;
+  }
+}
+
+@media only screen and (min-width: 1440px){
+  .home{
+    padding: 5rem 13rem;
+  }
 }
