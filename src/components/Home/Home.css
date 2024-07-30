@@ -55,16 +55,9 @@
   font-size: 1rem;
 }
 
-button:hover{
-  cursor: pointer;
-}
-
-button a{
-  color: inherit;
-}
-
-.btn{
-  font-size: 16px;
+a.btn{
+  font-size: 1rem;
+  display: inline-block;
 }
 
 .btn-primary{
@@ -86,7 +79,7 @@ button a{
   border: 0;
   padding: 1rem;
   background-color: #cccfd4ad;
-  margin-right: 2rem;
+  color: black !important;
 }
 
 .btn-secondary:hover{
@@ -103,6 +96,10 @@ button a{
 
 .m-top-5{
   margin-top: 5rem;
+}
+
+.m-end-2{
+  margin-right: 2rem;
 }
 
 .gap-2{
