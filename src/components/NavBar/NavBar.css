@@ -16,6 +16,10 @@ nav ul{
   align-items: center;
 }
 
+nav li{
+  margin-bottom: 0.5rem;
+}
+
 nav li a{
   padding: 0 1rem;
   color: #FEFAF6 !important; 
