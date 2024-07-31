@@ -20,6 +20,10 @@ nav li{
   margin-bottom: 0.5rem;
 }
 
+nav li:last-child{
+  margin: 0;
+}
+
 nav li a{
   padding: 0 1rem;
   color: #FEFAF6 !important; 
