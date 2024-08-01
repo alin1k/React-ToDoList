@@ -51,8 +51,8 @@
 
 .home-text{
   font-weight: 400;
-  margin-bottom: -0.5rem;
-  font-size: 1rem;
+  line-height: 1;
+  font-size: 1.3rem;
 }
 
 a.btn{

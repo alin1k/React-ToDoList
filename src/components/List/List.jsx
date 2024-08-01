@@ -23,6 +23,7 @@ function List({index: listIndex}) {
       <div className="listTop">
         <input 
           className="listName" 
+          name="list-name"
           value={listName}
           placeholder="Type your list name here"
           onChange={e =>{ 

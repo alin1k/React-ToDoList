@@ -18,7 +18,7 @@ function Home() {
 
           <div className="button-group m-top-5">
             <h2 className='home-text'>Find it hard to focus on your tasks?</h2>
-            <h2 className='home-text'>Stay organized and productive by managing your tasks easier</h2>
+            <h2 className='home-text m-top-1'>Stay organized and productive by managing your tasks easier</h2>
             <a href='#main-content' className='btn btn-secondary m-top-2 m-end-2'>See More</a>
             <Link to="/lists" className='btn btn-primary'>Get Started</Link>
           </div>
