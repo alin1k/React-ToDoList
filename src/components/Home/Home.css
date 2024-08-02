@@ -6,7 +6,7 @@
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue';
 }
 
-.font-header{
+.font-heading{
   font-family: "Bebas Neue", sans-serif;
 }
 
@@ -42,7 +42,7 @@
 }
 
 .color-secondary{
-  color: #cccfd4;
+  color: #889fc0;
 }
 
 .color-accent{
@@ -106,6 +106,18 @@ a.btn{
   gap: 2rem;
 }
 
+.gap-3{
+  gap: 3rem;
+}
+
+.gap-5{
+  gap: 5rem;
+}
+
+.row-gap-5{
+  row-gap: 5rem;
+}
+
 .p-1{
   padding: 1rem;
 }
@@ -115,7 +127,7 @@ a.btn{
   height: 4rem !important;
 }
 
-.cards-header{
+.heading{
   text-align: center;
   font-size: 3rem;
 }
@@ -155,6 +167,37 @@ a.btn{
   width: 100%;
 }
 
+.number-heading{
+  color: #102C57;
+  font-size: 3rem;
+}
+
+.grid-2{
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  align-items: center;
+}
+
+.number-subheading{
+  color: #889fc0;
+  font-size: 1.5rem;
+  margin-top: -0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.text-center{
+  text-align: center;
+}
+
+.text-end{
+  text-align: end;
+}
+
+.hiw-icon{
+  display: none !important;
+}
+
 @media only screen and (min-width: 535px){
   .header-content{
     text-align: start;
@@ -166,9 +209,28 @@ a.btn{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
   }
+
+  .grid-2{
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+  }
+
+  .grid-2 :nth-child(odd){
+    justify-self: end;
+  }
+
+  .grid-2 :nth-child(even){
+    justify-self: start;
+  }
+
+  .hiw-icon{
+    display: block !important;
+  }
+
   .home{
     padding: 3rem 3rem;
   }
+
   .header-grid{
     display: grid;
     grid-template-columns: 60% 40%;
