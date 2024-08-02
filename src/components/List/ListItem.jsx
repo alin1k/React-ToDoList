@@ -30,6 +30,7 @@ function ListItem({listIndex, index: itemIndex}) {
       <input
         className="listItemName" 
         name="list-item"
+        autocomplete="off"
         value={inputValue}
         placeholder="Type your ideea here"
         onChange={(e)=> {

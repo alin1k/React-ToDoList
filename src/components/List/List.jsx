@@ -23,6 +23,7 @@ function List({index: listIndex}) {
       <div className="listTop">
         <input 
           className="listName" 
+          autocomplete="off"
           name="list-name"
           value={listName}
           placeholder="Type your list name here"
