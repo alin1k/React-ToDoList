@@ -209,6 +209,11 @@ a.btn{
   display: none !important;
 }
 
+.grid-center{
+  justify-self: center;
+  align-self: center;
+}
+
 @media only screen and (min-width: 535px){
   .header-content{
     text-align: start;
@@ -216,6 +221,11 @@ a.btn{
 }
 
 @media only screen and (min-width: 768px){
+  .grid-2{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
   .grid-3{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -286,6 +296,7 @@ a.btn{
   .home-subheader{
     font-size: 2rem;
   }
+
 }
 
 @media only screen and (min-width: 1024px){

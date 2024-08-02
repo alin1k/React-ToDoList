@@ -4,6 +4,7 @@ import "./ListGrid.css"
 import { useDispatch, useSelector } from "react-redux";
 import ListContent from "./ListContent";
 import AddCircleIcon from '@mui/icons-material/AddCircle';
+import {ReactComponent as Ilustration} from "./ilustration.svg"
 
 function ListGrid() {
 
@@ -44,6 +45,7 @@ function ListGrid() {
             <span className="addListLink" onClick={()=>{dispatch(addList())}}>Add a List </span>
             Now and Take Control of Your Tasks
           </p>
+          <Ilustration className="list-ilustration"/>
         </div>
       }
     </div>

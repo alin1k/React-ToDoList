@@ -5,6 +5,7 @@ import ArticleIcon from '@mui/icons-material/Article';
 import TrendingUpIcon from '@mui/icons-material/TrendingUp';
 import SentimentVerySatisfiedIcon from '@mui/icons-material/SentimentVerySatisfied';
 import {ReactComponent as Ilustration} from "./ilustration.svg"
+import {ReactComponent as Ilustration2} from "./ilustration2.svg"
 import PlaylistAddIcon from '@mui/icons-material/PlaylistAdd';
 import BorderColorIcon from '@mui/icons-material/BorderColor';
 import PostAddIcon from '@mui/icons-material/PostAdd';
@@ -24,8 +25,19 @@ function Home() {
           <div className="button-group m-top-5">
             <h2 className='home-text'>Find it hard to focus on your tasks?</h2>
             <h2 className='home-text m-top-1'>Stay organized and productive by managing your tasks easier</h2>
-            <a href='#main-content' className='btn btn-secondary m-top-2 m-end-2'>See More</a>
-            <Link to="/lists" className='btn btn-primary'>Get Started</Link>
+            <a 
+              href='#main-content' 
+              className='btn btn-secondary m-top-2 m-end-2'
+              onClick={(e)=>{
+                e.preventDefault();
+
+                document.querySelector('#main-content').scrollIntoView({
+                  behavior: 'smooth'
+                });
+              }}
+            >See More
+            </a>
+            <Link to="/lists" className='btn btn-primary m-top-2'>Get Started</Link>
           </div>
         </div>
 
@@ -111,7 +123,14 @@ function Home() {
         <ChecklistIcon className='icon-size-4 color-primary hiw-icon'/>
       </div>
 
-      
+      <div className="grid-2 m-top-5">
+        <Ilustration2 className='ilustration'/>
+        <div className='text-center grid-center'>
+          <h1 className="heading color-primary font-heading">Get Started Now</h1>
+          <h2 className='home-text m-top-2 text-center'>Get Started Today and Take Control of Your Tasks</h2>
+          <Link to="/lists" className='btn btn-primary m-top-2'>Go to My Lists</Link>
+        </div>
+      </div>
 
     </div>
   )
