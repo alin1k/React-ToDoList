@@ -122,6 +122,10 @@ a.btn{
   padding: 1rem;
 }
 
+.py-2{
+  padding: 2rem 0;
+}
+
 .icon-size-4{
   width: 4rem !important;
   height: 4rem !important;
@@ -172,10 +176,9 @@ a.btn{
   font-size: 3rem;
 }
 
-.grid-2{
+.hiw-grid{
   display: grid;
   grid-template-columns: 1fr;
-  justify-items: center;
   align-items: center;
 }
 
@@ -194,7 +197,15 @@ a.btn{
   text-align: end;
 }
 
+.text-start{
+  text-align: start;
+}
+
 .hiw-icon{
+  display: none !important;
+}
+
+.circle{
   display: none !important;
 }
 
@@ -210,21 +221,43 @@ a.btn{
     grid-template-columns: 1fr 1fr 1fr;
   }
 
-  .grid-2{
-    grid-template-columns: 1fr 1fr;
+  .hiw-grid{
+    grid-template-columns: 1fr 5rem 1fr;
     position: relative;
   }
 
-  .grid-2 :nth-child(odd){
-    justify-self: end;
+  .hiw-grid :nth-child(3n+0){
+    justify-self: start;
   }
 
-  .grid-2 :nth-child(even){
-    justify-self: start;
+  .hiw-grid :nth-child(3n-2){
+    justify-self: end;
   }
 
   .hiw-icon{
     display: block !important;
+  }
+
+  .circle{
+    display: block !important;
+    height: 100%;
+    border: 2px solid #cccfd4ad;
+    justify-self: center;
+    align-self: center;
+    position: relative;
+  }
+
+  .circle::before{
+    display: block;
+    content: '';
+    width: 1rem;
+    height: 1rem;
+    border: 4px solid #cccfd4ad;
+    background: #FEFAF6;
+    border-radius: 50%;
+    position: absolute;
+    left: -0.70rem;
+    top: 50%;
   }
 
   .home{
