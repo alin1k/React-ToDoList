@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
-import Checkbox from "./Checkbox/Checkbox";
+import Checkbox from "../../../components/Checkbox/Checkbox";
 import "./List.css"
 import RemoveIcon from '@mui/icons-material/Remove';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import { useDispatch, useSelector } from "react-redux";
-import { deleteListItem, moveListItemDown, moveListItemUp, updateListItemText } from "../../redux/lists/listsSlice";
+import { deleteListItem, moveListItemDown, moveListItemUp, updateListItemText } from "../../../redux/lists/listsSlice";
 
 
 function ListItem({listIndex, index: itemIndex}) {

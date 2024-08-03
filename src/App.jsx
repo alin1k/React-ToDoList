@@ -1,10 +1,10 @@
 import NavBar from "./components/NavBar/NavBar";
-import ListGrid from "./components/ListGrid/ListGrid";
 import Footer from "./components/Footer/Footer";
+import ListsContainer from "./pages/ListsContainer/ListsContainer"
 import "./App.css"
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Home from "./components/Home/Home";
-import NotFound from "./components/NotFound/NotFound";
+import Home from "./pages/Home/Home";
+import NotFound from "./pages/NotFound/NotFound";
 
 function App() {
   return (
@@ -14,7 +14,7 @@ function App() {
 
         <Routes>
           <Route path="/" element={<Home/>}/>
-          <Route path="/lists" element={<ListGrid/>}/>
+          <Route path="/lists" element={<ListsContainer/>}/>
           <Route path="*" element={<NotFound/>}/>
         </Routes>
 

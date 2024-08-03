@@ -1,11 +1,13 @@
 import React from 'react'
 import "./Home.css"
 import { Link } from 'react-router-dom'
+//ILUSTRATIONS
+import {ReactComponent as HeaderIlustration} from "../../assets/header-ilustration.svg"
+import {ReactComponent as Ilustration} from "../../assets/woman-ilustration.svg"
+//ICONS
 import ArticleIcon from '@mui/icons-material/Article';
 import TrendingUpIcon from '@mui/icons-material/TrendingUp';
 import SentimentVerySatisfiedIcon from '@mui/icons-material/SentimentVerySatisfied';
-import {ReactComponent as Ilustration} from "./ilustration.svg"
-import {ReactComponent as Ilustration2} from "./ilustration2.svg"
 import PlaylistAddIcon from '@mui/icons-material/PlaylistAdd';
 import BorderColorIcon from '@mui/icons-material/BorderColor';
 import PostAddIcon from '@mui/icons-material/PostAdd';
@@ -41,7 +43,7 @@ function Home() {
           </div>
         </div>
 
-        <Ilustration className='ilustration'/>
+        <HeaderIlustration className='ilustration'/>
       </div>
       
 
@@ -124,7 +126,7 @@ function Home() {
       </div>
 
       <div className="grid-2 m-top-5">
-        <Ilustration2 className='ilustration'/>
+        <Ilustration className='ilustration'/>
         <div className='text-center grid-center'>
           <h1 className="heading color-primary font-heading">Get Started Now</h1>
           <h2 className='home-text m-top-2 text-center'>Get Started Today and Take Control of Your Tasks</h2>
