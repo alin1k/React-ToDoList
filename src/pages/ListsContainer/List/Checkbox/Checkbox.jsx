@@ -2,7 +2,7 @@ import "./Checkbox.css"
 import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank';
 import CheckBoxIcon from '@mui/icons-material/CheckBox';
 import { useDispatch, useSelector } from "react-redux";
-import { updateListItemChecked } from "../../redux/lists/listsSlice";
+import { updateListItemChecked } from "../../../../redux/lists/listsSlice.js";
 
 function Checkbox({itemIndex, listIndex}) {
 

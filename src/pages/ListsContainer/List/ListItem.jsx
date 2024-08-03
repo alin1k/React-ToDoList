@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Checkbox from "../../../components/Checkbox/Checkbox";
+import Checkbox from "./Checkbox/Checkbox";
 import "./List.css"
 import RemoveIcon from '@mui/icons-material/Remove';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
