@@ -3,7 +3,7 @@ import ListItem from "./ListItem";
 import "./List.css";
 import CloseIcon from '@mui/icons-material/Close';
 import { useDispatch, useSelector } from "react-redux";
-import { addListItem, changeListName, deleteList } from "../../../redux/lists/listsSlice.js";
+import { addListItem, changeListName, deleteList } from "../../../../../redux/lists/listsSlice.js";
 import Swal from "sweetalert2";
 
 function List({index: listIndex}) {

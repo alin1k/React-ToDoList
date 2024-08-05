@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
+import { truncateItemText } from '../../../../utils/helpers';
 
 
 function ListContent({list, listIndex}) {
@@ -19,7 +20,7 @@ function ListContent({list, listIndex}) {
             key={"item" + listIndex.toString() + itemIndex.toString()}
             style={item.checked ? {textDecoration: "line-through"} : {textDecoration: "none"}}
           >
-            {item.text.length <= 20 ? item.text : item.text.substring(0, 20) + "..."}
+            {truncateItemText(item, 20)}
           </p>
         )}
       </div>

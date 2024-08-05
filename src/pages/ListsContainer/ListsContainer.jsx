@@ -1,52 +1,21 @@
-import { addList } from "../../redux/lists/listsSlice";
-import List from "./List/List";
 import "./ListsContainer.css"
-import { useDispatch, useSelector } from "react-redux";
-import ListContent from "./ListContent";
-import AddCircleIcon from '@mui/icons-material/AddCircle';
-import {ReactComponent as LaptopIlustration} from "../../assets/laptop-ilustration.svg"
+import { useSelector } from "react-redux";
+import NoLists from "./components/NoLists";
+import Sidebar from "./components/Sidebar/Sidebar";
+import Lists from "./components/Lists/Lists";
 
 function ListGrid() {
 
-  const lists = useSelector(state => state.lists)
-  const dispatch = useDispatch();
+  const lists = useSelector(state => state.lists);
 
   return(
     <div className="listGridContainer">
-      <div className="listNamesContainer">
-        <h2>Your Lists</h2>
-        <div className="listNames">
-          {lists.map((list, listIndex)=>
-            <ListContent key={"list"+listIndex} list={list} listIndex={listIndex}/>
-          )}
-        </div>
-      </div>
+      <Sidebar lists={lists}/>
 
-      {lists.length > 0?
-        <div className="grid">
-          {lists.map((list , index)=>
-            <List 
-              key={index} 
-              index={index}
-            />
-          )}
-
-          <button className="addListButton" onClick={()=>{
-            dispatch(addList())
-          }}>
-            <AddCircleIcon className="addIcon"/>
-            Add New List
-          </button>
-        </div>
+      {lists.length <= 0?
+        <NoLists/>
         :
-        <div className="headerContainer">
-          <h1 className="header">MY TO-DO LISTS</h1>
-          <p>
-            <span className="addListLink" onClick={()=>{dispatch(addList())}}>Add a List </span>
-            Now and Take Control of Your Tasks
-          </p>
-          <LaptopIlustration className="list-ilustration"/>
-        </div>
+        <Lists lists={lists}/>
       }
     </div>
   )
