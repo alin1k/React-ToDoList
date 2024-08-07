@@ -1,7 +1,7 @@
 import React from 'react'
 import { useDispatch } from 'react-redux';
 import { addList } from '../../../redux/lists/listsSlice';
-import {ReactComponent as LaptopIlustration} from "../../../assets/laptop-ilustration.svg"
+import {ReactComponent as LaptopIlustration} from "assets/laptop-ilustration.svg"
 
 function NoLists() {
 

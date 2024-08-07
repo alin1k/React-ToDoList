@@ -1,5 +1,5 @@
 import React from 'react'
-import {ReactComponent as Ilustration} from "../../../assets/woman-ilustration.svg"
+import {ReactComponent as Ilustration} from "assets/woman-ilustration.svg"
 import { Link } from 'react-router-dom';
 
 function GetStarted() {

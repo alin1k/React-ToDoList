@@ -1,5 +1,5 @@
 import React from 'react'
-import {ReactComponent as HeaderIlustration} from "../../../assets/header-ilustration.svg"
+import {ReactComponent as HeaderIlustration} from "assets/header-ilustration.svg"
 import { Link } from 'react-router-dom';
 
 function Header() {

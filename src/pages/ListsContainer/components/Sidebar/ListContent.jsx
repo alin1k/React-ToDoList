@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
-import { truncateItemText } from '../../../../utils/helpers';
+import { truncateItemText } from 'utils/helpers';
 
 
 function ListContent({list, listIndex}) {
