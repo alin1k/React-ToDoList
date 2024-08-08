@@ -4,7 +4,7 @@ import List from "./List/List"
 
 function Lists({lists}) {
   return (
-    <div className="grid">
+    <div className="listsContainer">
       {lists.map((list , index)=>
         <List 
           key={index} 
