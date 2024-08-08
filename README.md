@@ -1,6 +1,6 @@
 # To Do List in React [![Netlify Status](https://api.netlify.com/api/v1/badges/2b22e7ed-ac8b-4da4-9eb0-0719e14c0a0d/deploy-status)](https://app.netlify.com/sites/todolist1518/deploys)
 
-### This is a simple To-Do List created in React. I made this project to re-learn React and learn about Redux. See project live [here](https://todolist1518.netlify.app/)
+### This is a simple To-Do List created in React. I made this project to re-learn React and learn about Redux. See live project [here](https://todolist1518.netlify.app/)
 
 It is a simple CRUD[^1] application that lets you add as many lists as you want. Inside the lists, you can add new list items, edit them as you wish, move them up or down, and even remove items from the list.
 
