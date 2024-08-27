@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=New+Amsterdam&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
 
 .font-primary{
@@ -7,7 +7,7 @@
 }
 
 .font-heading{
-  font-family: "Bebas Neue", sans-serif;
+  font-family: "New Amsterdam", sans-serif;
 }
 
 .home{
@@ -17,9 +17,9 @@
 }
 
 .home-header{
-  font-family: "Bebas Neue", sans-serif;
-  font-weight: 600;
-  font-size: 4rem;
+  font-family: "New Amsterdam", sans-serif;
+  font-weight: 400;
+  font-size: 5rem;
   color: #102C57;
 }
 
@@ -284,7 +284,7 @@ a.btn{
   }
 
   .home-header{
-    font-size: 5rem;
+    font-size: 7rem;
   }
 
   .home-text{
