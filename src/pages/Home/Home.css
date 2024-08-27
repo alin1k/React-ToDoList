@@ -157,7 +157,7 @@ a.btn{
 
 .card{
   text-align: center;
-  border: #102C57 solid;
+  border: 0.2rem #102C57 solid;
   border-top: 1rem solid #102C57;
 }
 

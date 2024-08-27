@@ -82,6 +82,12 @@
   overflow-x: hidden;
 }
 
+.addListButtonContainer{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
 .addListButton{
   border: 0;
   background-color: transparent;
